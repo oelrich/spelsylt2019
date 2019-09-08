@@ -1,6 +1,5 @@
 local Splashy = {}
 Splashy.font = love.graphics.newFont("assets/fonts/KeyVirtue.ttf",64)
-Splashy.image = love.graphics.newImage("assets/sprites/splashy.png")
 
 require("intro")
 
