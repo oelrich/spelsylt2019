@@ -30,6 +30,8 @@ function draw_intro()
   love.graphics.print("I'm gonna eat you little fishy!", 40, 300)
   love.graphics.setColor(Intro.text_red,Intro.text_green,Intro.text_blue,Intro.text_second_alpha)
   love.graphics.print("'Cause I like little fish!", 260, 400)
+  love.graphics.setColor(0, .3, .5, 1)
+  love.graphics.print("Press key to start!", 300, 500)
 end
 
 local function update_colours(dt)
@@ -37,7 +39,6 @@ local function update_colours(dt)
   Intro.text_blue = Intro.text_blue - (1/7 * dt)
   Intro.text_green = Intro.text_green - (1/5 * dt)
 end
-
 
 local function update_alphas(dt)
   if Intro.splash_a < 1 then
@@ -52,7 +53,7 @@ local function update_alphas(dt)
 end
 
 local function update_locations(dt)
-  Intro.splash_x = Intro.splash_x + (5* dt)
+  Intro.splash_x = Intro.splash_x + (5 * dt)
 end
 
 
@@ -61,6 +62,8 @@ local function update_intro(dt)
   update_alphas(dt)
   update_locations(dt)
 end
+
+
 
 
 Intro.update = update_intro
