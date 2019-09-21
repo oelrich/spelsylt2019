@@ -13,18 +13,21 @@ function love.load()
 end
 
 function love.update(dt)
-  require("lurker").update()
   Splashy.currentUpdate(dt)
 end
 
-function love.keypressed(key)
+function love.keypressed(key)  
   if Splashy.intro then
     Splashy.intro = false
     Splashy.currentDraw = Tutorial.draw
     Splashy.currentUpdate = Tutorial.update
     Splashy.currentKeypressed = Tutorial.keypressed
   else
-    Splashy.currentKeypressed(key)
+    if key == "q" then
+      love.event.quit()
+    else
+      Splashy.currentKeypressed(key)
+    end
   end
 end
 
